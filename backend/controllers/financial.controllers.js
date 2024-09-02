@@ -1,5 +1,5 @@
-const { Financial } = require("../models");
-const financial = require("../models/financial.model");
+const Financial = require("../models");
+const Financial = require("../models/financial.model");
 
 //create a new  Financial record
 exports.create = async (req, res) =>{
