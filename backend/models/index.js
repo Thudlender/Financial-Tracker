@@ -7,4 +7,4 @@ db.Sequilize = Sequilize;
 db.sequilize = sequilize;
 db.Financial = Financial;
 
-module.exports = db
+module.exports = db;

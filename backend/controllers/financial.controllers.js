@@ -1,4 +1,3 @@
-const Financial = require("../models");
 const Financial = require("../models/financial.model");
 
 //create a new  Financial record
@@ -12,7 +11,7 @@ exports.create = async (req, res) =>{
       category,
       paymentMethod,
     };
-    await Financial.create(newRecord).then((date)=>{
+    await Financial.create(newRecord).then((data)=>{
         res
             .status(500)
             .send({
@@ -54,28 +53,6 @@ exports.findAllByUserId = async (req,res) => {
 };
 // [ยังต้องแก้] 
 //     V
- //Get By id
-    exports.getByid = async (req, res)=>{
-        const id = req.params.id;
-        await Financial.findByPk(id)
-          .then((data) => {
-            if (!data) {
-              res
-                .status(404)
-                .send({ message: "No found Restaurant with id " + id });
-            } else {
-              res.send(data);
-            }
-          })
-          .catch((error) => {
-            res.status(500).send({
-              message:
-                error.message ||
-                "Something error occured while creating the reataurant.",
-            });
-          });
-    };
-
     //Update a restaurant
     exports.update = async (req, res) =>{
         const id = req.params.id;

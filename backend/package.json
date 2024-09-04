@@ -8,7 +8,18 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["financial tracker", "resful API"],
+  "keywords": [
+    "financial tracker",
+    "resful API"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.12.0",
+    "postgres": "^3.4.4",
+    "sequelize": "^6.37.3"
+  }
 }

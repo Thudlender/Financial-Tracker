@@ -1,5 +1,5 @@
 const financialController = require("../controllers/financial.controllers");
-const express = require("express");
+const express = require("express")
 const router = express.Router();
 
 //create a new financial
@@ -9,7 +9,7 @@ router.post("/", financialController.create);
 router.get("/", financialController.findAll);
 
 //Retrieve a financial record with id
-router.get("/:id", financialController.findOne);
+//router.get("/:id", financialController.findOne);
 
 //Retrieve all financial records By UserId
 router.get("/user/:userId", financialController.findAllByUserId);

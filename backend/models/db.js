@@ -1,5 +1,15 @@
-const { Sequilize } = require ("sequilize");
+const { Sequelize } = require("sequelize");
 const dbConfig = require("../config/db.config");
-console.log(dbConfig);
 
-const sequelize = new Sequilize(dbConfig.DB, dbConfig.USER, dbConfig)
+const sequelize = new Sequelize(dbConfig.DATABASE, dbConfig.USER, dbConfig.PASSWORD, {
+  host: dbConfig.HOST,
+  dialect: dbConfig.dialect,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+});
+
+module.exports = sequelize;
