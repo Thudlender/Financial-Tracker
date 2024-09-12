@@ -1,12 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import router from './routers/Router.jsx'
-import { RouterProvider } from 'react-router-dom'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+// import App from './App.jsx';
+import './index.css';
+import router from './routers/Router.jsx';
+import { RouterProvider } from 'react-router-dom';
+import { ClerkProvider } from "@clerk/clerk-react";
+// import your publishable key
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router}/>
-  </StrictMode>,
-)
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable key");
+}
+  createRoot(document.getElementById("root")).render(
+    <StrictMode>
+      <ClerkProvider publishablekey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+        <RouterProvider router={router} />
+      </ClerkProvider>
+    </StrictMode>
+  );
