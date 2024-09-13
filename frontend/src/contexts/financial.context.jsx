@@ -75,7 +75,7 @@ export const FinancialRecordProvider = ({ children }) => {
         console.log(error);
       }
     };
-    const getFinancialRecordsById = async (id) => {
+    const getFinancialRecordById = async (id) => {
       try {
         const response = await FinancialService.getFinancialRecordsById(id);
         if (response.status === 200) {
@@ -99,6 +99,22 @@ export const FinancialRecordProvider = ({ children }) => {
       }
     };
     return (
-      // แก้ต่ออีก------------------------------------
-    )
-}
+      <FinancialRecordContext.Provider
+        value={{
+          records,
+          months,
+          selectedMonth,
+          setSelectedMonth,
+          selectedYear,
+          setSelectedYear,
+          addRecord,
+          updateRecord,
+          deleteRecord,
+          getFinancialRecordById,
+        }}
+      >
+        {children}
+        </FinancialRecordContext.Provider>
+    );
+};
+export const useFinancialRecords = () => useContext(FinancialRecordContext);
