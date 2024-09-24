@@ -46,6 +46,6 @@ const EdiModal = ({ id, title }) => {
             updateRecord(id, { ...record, userId: user.Id });
             document.getElementById("updateRecord").close();
         };
-        // return() still need to add
+        // return() still need to add 
     };
 
