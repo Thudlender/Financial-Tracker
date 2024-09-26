@@ -10,7 +10,7 @@ const AddRecordForm = () => {
         category:"",
         PaymentMethod:""
     })
-    const {addRecord} = useFinancialRecords();
+    const {addRecord} = useFinancialRecord();
     const {user} = useUser();
     const handleChange = (e) => {
         const {name, value} = e.target;

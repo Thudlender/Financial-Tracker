@@ -4,7 +4,7 @@ import { useUser } from "@clerk/clerk-react";
 export const useFinancialRecordContext = createContext();
 
 export const FinancialRecordProvider = ({ children }) => {
-    const [records, setRecord] = useState([]);
+    const [records, setRecords] = useState([]);
     const { user } = useUser();
     const months = [
       "January",

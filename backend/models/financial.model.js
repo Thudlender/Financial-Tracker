@@ -22,6 +22,9 @@ const Financial = sequelize.define("financial", {
   amount: {
     type: DataTypes.DECIMAL,
     allowNull: false,
+    validate: {
+      min: 0
+    }
   },
   category: {
     type: DataTypes.STRING,
@@ -33,7 +36,7 @@ const Financial = sequelize.define("financial", {
   },
 });
 
-Financial.sync({force:true})
+Financial.sync({force:false})
 .then(() => {
     console.log("Table created or already exists");
 })
