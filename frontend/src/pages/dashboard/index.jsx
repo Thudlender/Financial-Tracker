@@ -1,8 +1,8 @@
 import React from "react";
-import { useUser } from "@clerk/clerk-react";
-import { useFinancialRecords } from "../../contexts/financial.context";
+// import { useUser } from "@clerk/clerk-react";
+import { useFinancialRecord } from "../../contexts/financial.context";
 import AddRecordForm from "./AddRecordForm";
-import { FinancialRecordTable } from "./FinancialRecord.Table";
+// import { FinancialRecordTable } from "./FinancialRecord.Table";
 
 const Dashboard = () => {
     return (

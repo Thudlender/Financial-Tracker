@@ -1,10 +1,10 @@
-import { creatBrowserRouter } from "react-router-dom";
+// import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 
 import Home from "../pages/Home";
-import Dashboard from "../pages/dashboard";
+// import Dashboard from "../pages/dashboard";
 
-const router = creatBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "",
     element: <MainLayout />,
@@ -13,7 +13,7 @@ const router = creatBrowserRouter([
             path:"",
             element: <Home />,
         },
-        { path: "dashboard", element: <Dashboard /> },
+        // { path: "dashboard", element: <Dashboard /> },
     ],
   },
 ]);

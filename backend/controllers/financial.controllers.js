@@ -2,7 +2,14 @@ const Financial = require("../models/financial.model");
 
 //create a new  Financial record
 exports.create = async (req, res) =>{
+  console.log("hello world")
     const {userId, date, description, amount, category, paymentMethod} = req.body;
+    console.log(userId,
+      date,
+      description,
+      amount,
+      category,
+      paymentMethod)
     const newRecord = {
       userId,
       date,
@@ -11,6 +18,7 @@ exports.create = async (req, res) =>{
       category,
       paymentMethod,
     };
+    
     Financial.create(newRecord).then((data)=>{
       res.send(data);
   }).catch((error)=>{

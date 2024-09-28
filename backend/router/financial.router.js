@@ -3,7 +3,7 @@ const express = require("express")
 const router = express.Router();
 
 //create a new financial
-router.post("/", financialController.create);
+router.post("/post", financialController.create);
 
 //Retrieve all financial records
 router.get("/", financialController.findAll);

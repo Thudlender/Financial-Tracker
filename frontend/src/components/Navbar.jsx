@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/clerk-react";
+// import {
+//   SignedIn,
+//   SignedOut,
+//   SignInButton,
+//   SignUpButton,
+//   UserButton,
+// } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(

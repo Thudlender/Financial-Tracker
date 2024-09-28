@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import Search from "./../component/Search";
-import FinancialService from "../service/financial.service";
-import Table from "../component/Table";
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/clerk-react";
-import { Navigate } from "react-router-dom";
+// import Search from "./../component/Search";
+// import FinancialService from "../service/financial.service";
+// import Table from "../component/Table";
+// import {
+//   SignedIn,
+//   SignedOut,
+//   SignInButton,
+//   SignUpButton,
+//   UserButton,
+// } from "@clerk/clerk-react";
+// import { Navigate } from "react-router-dom";
 
 
 
