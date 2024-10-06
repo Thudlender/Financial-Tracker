@@ -8,31 +8,9 @@ import {
   UserButton,
 } from "@clerk/clerk-react";
 import { Navigate } from "react-router-dom";
-import Swal from 'sweetalert2';
-
-
-
 
 function Home() {
-  const [financials, setFinancials] = useState([]);
-  useEffect(() => {
-    const getFinancial = async () =>{
-      try {
-        const response = await FinancialService.getAllFinancial();
-        if(response.status === 200){
-          setFinancials(response.data);
-        
-        }
-      } catch (error) {
-        Swal.fire({
-          title:"Get All Restaurant",
-          text:error?.response?.data?.message || error.message,
-          icon:"error"
-        });
-      }
-    }
-    getFinancial()
-  }, []);
+  
 //<Financial financials={financials}/>
   return (
     <>

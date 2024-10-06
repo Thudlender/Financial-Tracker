@@ -81,7 +81,7 @@ exports.findOne = async (req, res)=>{
 //Retreive all financial records  update
 exports.update = async (req, res) => {
 const userId = req.params.userId;
-await Restaurant.update(req.body, {
+await Financial.update(req.body, {
   where: { userId: userId },
 })
   .then((num) => {
@@ -101,7 +101,7 @@ await Restaurant.update(req.body, {
   .catch((error) => {
     res.status(500).send({
       message:
-        error.message || "Something error occurred creating the restaurant.",
+        error.message || "Something error occurred creating the financial.",
     });
   });
 };
@@ -109,15 +109,15 @@ await Restaurant.update(req.body, {
 //Retreive all financial records  delete
 exports.delete = async (req, res) => {
 const userId = req.params.userId;
-await Restaurant.destroy({ where: { userId: userId } })
+await Financial.destroy({ where: { userId: userId } })
   .then((num) => {
     if (num == 1) {
       res.send({
-        message: "Restaurant was deleted successfully.",
+        message: "Financial was deleted successfully.",
       });
     } else {
       res.send({
-        message: "Cannot delete Restaurant with id=" + id + ".",
+        message: "Cannot delete Financial with id=" + id + ".",
       });
     }
   })

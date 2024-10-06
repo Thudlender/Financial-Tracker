@@ -1,8 +1,8 @@
 import React from 'react'
-import { useFinancialRecord } from '../../contexts/financial.context';
+import { useFinancialRecords } from '../../contexts/financial.context';
 
 const FinancialRecordTable = () => {
-    const { record } = useFinancialRecord();
+    const { record } = useFinancialRecords();
   return (
     <div>
       <div>

@@ -1,12 +1,12 @@
 import React, { useMemo } from "react";
 import { useUser } from "@clerk/clerk-react";
-import { useFinancialRecord } from "../../contexts/financial.context";
+import { useFinancialRecords } from "../../contexts/financial.context";
 import AddRecordForm from "./AddRecordForm";
 import FinancialRecordTable from "./Financial.Record.Table"; // ตรวจสอบเส้นทาง
 
 const Dashbord = () => {
   const { user } = useUser();
-  const { records } = useFinancialRecord();
+  const { records } = useFinancialRecords();
 
   // ตรวจสอบให้แน่ใจว่า records มีค่า
   if (!records) {

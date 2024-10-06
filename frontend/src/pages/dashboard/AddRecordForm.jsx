@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useUser } from "@clerk/clerk-react";
-import { useFinancialRecord } from "../../contexts/financial.context";
+import { useFinancialRecords } from "../../contexts/financial.context";
 
 const AddRecordForm = () => {
     const [record, setRecord] = useState({
@@ -10,7 +10,7 @@ const AddRecordForm = () => {
         category:"",
         PaymentMethod:""
     })
-    const {addRecord} = useFinancialRecord();
+    const {addRecord} = useFinancialRecords();
     const {user} = useUser();
     const handleChange = (e) => {
         const {name, value} = e.target;

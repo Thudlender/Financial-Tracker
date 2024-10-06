@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import FinancialService from "../services/financial.service";
 import { useUser } from "@clerk/clerk-react";
-export const useFinancialRecordContext = createContext();
+export const useFinancialRecordsContext = createContext();
 
-export const FinancialRecordProvider = ({ children }) => {
+export const FinancialRecordsProvider = ({ children }) => {
     const [records, setRecords] = useState([]);
     const { user } = useUser();
     const months = [
@@ -99,7 +99,7 @@ export const FinancialRecordProvider = ({ children }) => {
       }
     };
     return (
-      <FinancialRecordContext.Provider
+      <FinancialRecordsContext.Provider
         value={{
           records,
           months,
@@ -114,7 +114,7 @@ export const FinancialRecordProvider = ({ children }) => {
         }}
       >
         {children}
-        </FinancialRecordContext.Provider>
+        </FinancialRecordsContext.Provider>
     );
 };
-export const useFinancialRecord = () => useContext(FinancialRecordProvider);
+export const useFinancialRecords = () => useContext(FinancialRecordsProvider);
