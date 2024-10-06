@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import FinancialService from "../services/financial.service";
-// import { useUser } from "@clerk/clerk-react";
+import { useUser } from "@clerk/clerk-react";
 export const useFinancialRecordContext = createContext();
 
 export const FinancialRecordProvider = ({ children }) => {
@@ -117,4 +117,4 @@ export const FinancialRecordProvider = ({ children }) => {
         </FinancialRecordContext.Provider>
     );
 };
-export const useFinancialRecord = () => useContext(FinancialRecordContext);
+export const useFinancialRecord = () => useContext(FinancialRecordProvider);

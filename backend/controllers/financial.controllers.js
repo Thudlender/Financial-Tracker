@@ -42,21 +42,24 @@ exports.findAll = async (req, res)=>{
 };
 
 //Retreive all financial records by User Id
-exports.findAllByUserId = async (req, res)=>{
-  const userId = req.params.userId;
-
-  await Financial.findAll({ where:{ userId:userId} })
-  .then((data)=>{
-      res.send(data);
-  })
-  .catch((error)=>{
-      res.status(500).send({
-          message: 
-          error.message ||
-          "Some error occuser while retrieving the financial reccord",
+exports.findAllByUserId = async (req, res) => {
+    const userId = req.params.userId;
+    await Financial.findAll({where:{userId:userId}})
+      .then((data) => {
+        if (!data) {
+          res.status(404).send({ message: "No fond Finacial with id" + id });
+        } else {
+          res.send(data);
+        }
+      })
+      .catch((error) => {
+        res.status(500).send({
+          message:
+            error.message ||
+            "Something error occured while creating the record.",
+        });
       });
-  });
-};
+  };
 
 //Retreive all financial records  findOne
 exports.findOne = async (req, res)=>{

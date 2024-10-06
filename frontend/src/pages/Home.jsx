@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-// import Search from "./../component/Search";
-// import FinancialService from "../service/financial.service";
-// import Table from "../component/Table";
-// import {
-//   SignedIn,
-//   SignedOut,
-//   SignInButton,
-//   SignUpButton,
-//   UserButton,
-// } from "@clerk/clerk-react";
-// import { Navigate } from "react-router-dom";
+import FinancialService from "../services/financial.service";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/clerk-react";
+import { Navigate } from "react-router-dom";
+import Swal from 'sweetalert2';
+
 
 
 
@@ -24,11 +24,11 @@ function Home() {
         
         }
       } catch (error) {
-        Swal.file({
+        Swal.fire({
           title:"Get All Restaurant",
           text:error?.response?.data?.message || error.message,
           icon:"error"
-        })
+        });
       }
     }
     getFinancial()

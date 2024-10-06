@@ -1,14 +1,14 @@
 import React from 'react'
-import { useFinancialRecords } from "../../contexts/financial.context";
+import { useFinancialRecord } from '../../contexts/financial.context';
 
 const FinancialRecordTable = () => {
-    const { record } = useFinancialRecords();
+    const { record } = useFinancialRecord();
   return (
     <div>
       <div>
         <div className="overflow-x-auto">
           <table className="table table-zebra">
-            {/* haed */}
+            {/* head */}
             <thead>
               <tr>
                 <th></th>
